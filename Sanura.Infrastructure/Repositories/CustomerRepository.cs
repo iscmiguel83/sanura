@@ -1,0 +1,25 @@
+﻿using Sanura.Core.Entities;
+using Sanura.Core.Interfaces;
+using Sanura.Core.Interfaces.Repositories;
+
+namespace Sanura.Infrastructure.Repositories
+{
+    public class CustomerRepository : ICustomerRepository
+    {
+        private readonly IDbContext dbContext;
+
+        public CustomerRepository(IDbContext dbContext)
+        {
+            this.dbContext = dbContext;
+        }
+
+        public async Task<IEnumerable<Customer>> GetAsync(string idSeller)
+        {
+            IEnumerable<Customer> customerCollection;
+
+            customerCollection = await this.dbContext.QueryAsync<Customer>("[Security].[ModuleGet]");
+
+            return customerCollection;
+        }
+    }
+}

@@ -4,17 +4,17 @@ namespace Sanura.Core.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {
-        IModuleRepository ModuleRepository
+        ICustomerRepository CustomerRepository
         {
             get;
         }
 
-        IRoleRepository RoleRepository
+        IInvoiceRepository InvoiceRepository
         {
             get;
         }
 
-        IUserRepository UserRepository
+        ISellerRepository SellerRepository
         {
             get;
         }

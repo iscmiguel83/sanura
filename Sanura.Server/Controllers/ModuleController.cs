@@ -1,58 +1,35 @@
 ﻿using System.Net;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Sanura.Core.DTOs;
 using Sanura.Core.Interfaces.Services;
-using Sanura.Core.Model;
 
 namespace Sanura.Server.Controllers
 {
     [/*Authorize, */ApiController, Route("api/[controller]")]
-    public class ModuleController : ControllerBase
+    public class SyncController : ControllerBase
     {
-        private readonly IModuleService moduleService;
+        private readonly ISyncService syncService;
 
-        public ModuleController(IModuleService moduleService)
+        public SyncController(ISyncService syncService)
         {
-            this.moduleService = moduleService;
+            this.syncService = syncService;
         }
 
-        /// <summary>
-        /// Request module collection
-        /// </summary>
-        /// <param name="options">Options to search records, pagination and export</param>
-        /// <returns>Module collection</returns>
-        /// <remarks>
-        /// Sample request:
-        /// 
-        ///     POST /Options
-        ///     {
-        ///         "orderBy" : { "column": "", "isDesc":0 }, // Code
-        ///         "pagination" : { "pageNumber": 0, "pageSize" : 0 },
-        ///         "filters": [
-        ///                         { "key": "IdModule",      "value": "int" },
-        ///                         { "key": "Code",            "value": "string" },
-        ///                         { "key": "Active",          "value": "boolean" },
-        ///                    ]
-        ///     }
-        ///     
-        /// </remarks>
-        [HttpPost, Route("Get")]
-        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(ResponseOptions<IEnumerable<ModuleDto>>))]
+        [HttpPost, Route("Download")]
+        [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(string))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<IActionResult> GetAsync([FromBody] RequestOptions options)
+        public async Task<IActionResult> DownloadAsync(string idSeller)
         {
-            var response = await this.moduleService.GetAsync(options);
+            var response = await this.syncService.DownloadAsync(idSeller);
 
             return Ok(response);
         }
 
-        [HttpPost, Route("Set")]
+        [HttpPost, Route("Upload")]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
-        public async Task<IActionResult> SetAsync([FromBody] ModuleDto model)
+        public async Task<IActionResult> UploadAsync(string fileBase64)
         {
-            await this.moduleService.SetAsync(model);
+            await this.syncService.UploadAsync(fileBase64);
 
             return Ok();
         }

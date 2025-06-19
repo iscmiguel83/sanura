@@ -6,9 +6,9 @@ namespace Sanura.Infrastructure
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private IModuleRepository? moduleRepository;
-        private IRoleRepository? roleRepository;
-        private IUserRepository? userRepository;
+        private ICustomerRepository? customerRepository;
+        private IInvoiceRepository? invoiceRepository;
+        private ISellerRepository? sellerRepository;
         private readonly IDbContext context;
 
         public UnitOfWork(IDbContext context)
@@ -16,39 +16,39 @@ namespace Sanura.Infrastructure
             this.context = context;
         }
 
-        public IModuleRepository ModuleRepository
+        public ICustomerRepository CustomerRepository
         {
             get
             {
-                if (this.moduleRepository == null)
+                if (this.customerRepository == null)
                 {
-                    this.moduleRepository = new ModuleRepository(this.context);
+                    this.customerRepository = new CustomerRepository(this.context);
                 }
-                return this.moduleRepository;
+                return this.customerRepository;
             }
         }
 
-        public IRoleRepository RoleRepository
+        public IInvoiceRepository InvoiceRepository
         {
             get
             {
-                if (this.roleRepository == null)
+                if (this.invoiceRepository == null)
                 {
-                    this.roleRepository = new RoleRepository(this.context);
+                    this.invoiceRepository = new InvoiceRepository(this.context);
                 }
-                return this.roleRepository;
+                return this.invoiceRepository;
             }
         }
 
-        public IUserRepository UserRepository
+        public ISellerRepository SellerRepository
         {
             get
             {
-                if (this.userRepository == null)
+                if (this.sellerRepository == null)
                 {
-                    this.userRepository = new UserRepository(this.context);
+                    this.sellerRepository = new SellerRepository(this.context);
                 }
-                return this.userRepository;
+                return this.sellerRepository;
             }
         }
 

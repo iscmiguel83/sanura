@@ -8,25 +8,25 @@ namespace Sanura.Movil.ViewModels;
 public partial class HomeViewModel : ObservableObject, IHomeViewModel
 {
     [RelayCommand]
-    private async Task Billing()
+    private async Task BillingAsync()
     {
 
     }
 
     [RelayCommand]
-    private async Task RegisterCashDeposit()
+    private async Task RegisterCashDepositAsync()
     {
 
     }
 
     [RelayCommand]
-    private async Task Sync()
+    private async Task SyncAsync()
     {
 
     }
 
     [RelayCommand]
-    private async Task Logout()
+    private async Task LogoutAsync()
     {
 
     }

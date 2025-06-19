@@ -21,9 +21,7 @@ namespace Sanura.Infrastructure.Extension
 
         public static IServiceCollection AddServices(this IServiceCollection services)
         {
-            services.AddTransient<IModuleService, ModuleService>();
-            services.AddTransient<IRoleService, RoleService>();
-            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<ISyncService, SyncService>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             return services;
         }

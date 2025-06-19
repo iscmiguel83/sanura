@@ -5,8 +5,6 @@ VisualStudioVersion = 17.14.36202.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanura.Core", "Sanura.Core\Sanura.Core.csproj", "{9329E7E4-CF08-4D88-9F50-91123EEC3435}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Sanura.Database", "Sanura.Database\Sanura.Database.sqlproj", "{27150CDE-11E1-4304-AFFC-43C8BD232DEB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanura.Infrastructure", "Sanura.Infrastructure\Sanura.Infrastructure.csproj", "{C215B45B-5D85-4F1B-937C-07713A400140}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanura.Server", "Sanura.Server\Sanura.Server.csproj", "{F2F04567-E649-4371-B349-519B78C72D14}"
