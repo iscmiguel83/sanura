@@ -14,7 +14,7 @@ namespace Sanura.Infrastructure.Extension
     {
         public static IServiceCollection AddDbContext(this IServiceCollection services, IConfiguration Configuration)
         {
-            services.AddTransient<IDbConnection>(z =>  new FbConnection(Configuration.GetConnectionString("SanuraFB")));
+            services.AddTransient<IDbConnection>(z =>  new FbConnection(Configuration.GetConnectionString("SanuraDB")));
             services.AddTransient<IDbContext, DbContext>();
 
             return services;
