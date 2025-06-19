@@ -17,7 +17,8 @@ namespace Sanura.Infrastructure.Repositories
         {
             Seller sellerrCollection;
 
-            sellerrCollection = await this.dbContext.QuerySingleAsync<Seller>($"SELECT CVE_VEND, STATUS, NOMBRE FROM VEND01 v WHERE CVE_VEND = '{idSeller}'");
+            var query = $"SELECT CVE_VEND, STATUS, NOMBRE FROM VEND01 v WHERE CVE_VEND = {idSeller}";
+            sellerrCollection = await this.dbContext.QuerySingleAsync<Seller>(query, System.Data.CommandType.Text);
 
             return sellerrCollection;
         }
