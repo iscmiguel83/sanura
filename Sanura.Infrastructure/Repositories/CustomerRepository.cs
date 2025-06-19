@@ -17,7 +17,7 @@ namespace Sanura.Infrastructure.Repositories
         {
             IEnumerable<Customer> customerCollection;
 
-            customerCollection = await this.dbContext.QueryAsync<Customer>("[Security].[ModuleGet]");
+            customerCollection = await this.dbContext.QueryAsync<Customer>($"SELECT CLAVE, STATUS, NOMBRE, RFC, NOMBRECOMERCIAL, TELEFONO MAIL FROM CLIE01 WHERE CVE_VEND = '{idSeller}'");
 
             return customerCollection;
         }
