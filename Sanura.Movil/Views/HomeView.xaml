@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sanura.Movil.Views.HomeView"
+             Title="HomeView">
+    <VerticalStackLayout>
+        <ScrollView >
+            <Border Style="{StaticResource BorderPage}">
+                <Grid ColumnDefinitions="0.5*,0.5*" RowDefinitions="0.5*,0.5*"> 
+                    <Border Style="{StaticResource BorderRegistre}" Grid.Column="0" Margin="{OnIdiom Default=10, Tablet=30}" >
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BillingCommand}"  />
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout>
+                            <VerticalStackLayout>
+                                <Image Source="billing.png" VerticalOptions="Fill" HorizontalOptions="Fill" Margin="{OnIdiom Default=10, Tablet=60}" />
+                                <Label Text="Cobranza" Style="{StaticResource Headline}" FontAttributes="Bold"  />
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+                </Grid>
+            </Border>
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>

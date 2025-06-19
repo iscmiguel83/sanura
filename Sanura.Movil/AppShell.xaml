@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Sanura.Movil.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"    
+    xmlns:views="clr-namespace:Sanura.Movil.Views"
+    Title="Sanura Movil">
+    <Shell.TitleView>
+        <Grid>
+            <Grid.Background>
+                <AppThemeBinding Light="#15396D" Dark="Transparent"/>
+            </Grid.Background>
+            <Image HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" >
+                <Image.Source>
+                    <AppThemeBinding Light="logo_light.png" Dark="logo_dark.png"/>
+                </Image.Source>
+            </Image>
+        </Grid>
+    </Shell.TitleView>
+
+    <ShellContent Title="Home" ContentTemplate="{DataTemplate views:HomeView}" Route="Home" />
+</Shell>
