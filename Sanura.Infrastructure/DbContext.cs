@@ -18,14 +18,14 @@ namespace Sanura.Infrastructure
             private set;
         }
 
-        public async Task<T> ExecuteScalarAsync<T>(string query, object parameters = null)
+        public async Task<T> ExecuteScalarAsync<T>(string query, CommandType commandType = CommandType.StoredProcedure, object? parameters = null)
         {
-            return await this.Connection.ExecuteScalarAsync<T>(sql: query, commandType: CommandType.StoredProcedure, param: parameters, commandTimeout: 240);
+            return await this.Connection.ExecuteScalarAsync<T>(sql: query, commandType: commandType, param: parameters, commandTimeout: 240);
         }
 
-        public async Task<T> QuerySingleAsync<T>(string query, object parameters = null)
+        public async Task<T> QuerySingleAsync<T>(string query, CommandType commandType = CommandType.StoredProcedure, object? parameters = null)
         {
-            return await this.Connection.QuerySingleAsync<T>(sql: query, commandType: CommandType.StoredProcedure, param: parameters, commandTimeout: 240);
+            return await this.Connection.QuerySingleAsync<T>(sql: query, commandType: commandType, param: parameters, commandTimeout: 240);
         }
 
         public async Task<T> QuerySingleOrDefaultAsync<T>(string query, object parameters = null)
@@ -38,14 +38,14 @@ namespace Sanura.Infrastructure
             return this.Connection.Query<T>(sql: query, commandType: CommandType.StoredProcedure, param: parameters, commandTimeout: 240);
         }
 
-        public async Task<int> ExecuteAsync(string query, object parameters = null)
+        public async Task<int> ExecuteAsync(string query, CommandType commandType = CommandType.StoredProcedure, object? parameters = null)
         {
-            return await this.Connection.ExecuteAsync(sql: query, commandType: CommandType.StoredProcedure, param: parameters, commandTimeout: 240);
+            return await this.Connection.ExecuteAsync(sql: query, commandType: commandType, param: parameters, commandTimeout: 240);
         }
 
-        public async Task<IEnumerable<T>> QueryAsync<T>(string query, object parameters = null)
+        public async Task<IEnumerable<T>> QueryAsync<T>(string query, CommandType commandType = CommandType.StoredProcedure, object? parameters = null)
         {
-            return await this.Connection.QueryAsync<T>(sql: query, commandType: CommandType.StoredProcedure, param: parameters, commandTimeout: 240);
+            return await this.Connection.QueryAsync<T>(sql: query, commandType: commandType, param: parameters, commandTimeout: 240);
         }
 
         public async Task<IEnumerable<TReturn>> QueryAsync<TFirst, TSecond, TThird, TFourth, TReturn>(string query, Func<TFirst, TSecond, TThird, TFourth, TReturn> map, string splitOn, object parameters = null)
