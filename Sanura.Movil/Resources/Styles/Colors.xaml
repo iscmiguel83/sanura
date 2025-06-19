@@ -42,4 +42,14 @@
     <SolidColorBrush x:Key="Gray600Brush" Color="{StaticResource Gray600}"/>
     <SolidColorBrush x:Key="Gray900Brush" Color="{StaticResource Gray900}"/>
     <SolidColorBrush x:Key="Gray950Brush" Color="{StaticResource Gray950}"/>
+
+    <LinearGradientBrush x:Key="GradientBackground" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="{StaticResource Gray100}" Offset="0.0" />
+        <GradientStop Color="{StaticResource Gray200}" Offset="1.0" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="GradientBackgroundBlack" StartPoint="0,0" EndPoint="1,1">
+        <GradientStop Color="#212121" Offset="0.0" />
+        <GradientStop Color="Black" Offset="1.0" />
+    </LinearGradientBrush>
 </ResourceDictionary>

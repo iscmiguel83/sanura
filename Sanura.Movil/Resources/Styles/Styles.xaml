@@ -19,6 +19,19 @@
         <Setter Property="StrokeThickness" Value="1"/>
     </Style>
 
+    <Style TargetType="Border" x:Key="BorderRegistre">
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="Stroke">
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Color="{AppThemeBinding Light=DarkGray, Dark=#212121}" Offset="0.1" />
+                <GradientStop Color="{AppThemeBinding Light=LightGray ,Dark=#212121}" Offset="1" />
+            </LinearGradientBrush>
+        </Setter>
+        <Setter Property="Background" Value="{AppThemeBinding Light={StaticResource GradientBackground},Dark={StaticResource GradientBackgroundBlack}}" />
+        <Setter Property="StrokeShape" Value="RoundRectangle 8" />
+        <Setter Property="Margin" Value="10,5"/>
+    </Style>
+
     <Style TargetType="BoxView">
         <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
     </Style>

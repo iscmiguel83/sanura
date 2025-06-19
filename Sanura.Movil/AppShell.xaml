@@ -8,9 +8,9 @@
     <Shell.TitleView>
         <Grid>
             <Grid.Background>
-                <AppThemeBinding Light="#15396D" Dark="Transparent"/>
+                <AppThemeBinding Light="Transparent" Dark="Transparent"/>
             </Grid.Background>
-            <Image HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" >
+            <Image HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" >
                 <Image.Source>
                     <AppThemeBinding Light="logo_light.png" Dark="logo_dark.png"/>
                 </Image.Source>

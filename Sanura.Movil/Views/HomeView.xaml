@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:Sanura.Movil.ViewModels"
              x:Class="Sanura.Movil.Views.HomeView"
+             x:DataType="vm:HomeViewModel"
              Title="HomeView">
-    <VerticalStackLayout>
+    <Grid>
         <ScrollView >
             <Border Style="{StaticResource BorderPage}">
                 <Grid ColumnDefinitions="0.5*,0.5*" RowDefinitions="0.5*,0.5*"> 
-                    <Border Style="{StaticResource BorderRegistre}" Grid.Column="0" Margin="{OnIdiom Default=10, Tablet=30}" >
+                    <Border Style="{StaticResource BorderRegistre}" Grid.Row="0" Grid.Column="0" Margin="{OnIdiom Default=10, Tablet=30}" >
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding BillingCommand}"  />
                         </Border.GestureRecognizers>
@@ -18,8 +20,43 @@
                             </VerticalStackLayout>
                         </VerticalStackLayout>
                     </Border>
+                    <Border Style="{StaticResource BorderRegistre}" Grid.Row="0" Grid.Column="1" Margin="{OnIdiom Default=10, Tablet=30}" >
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding RegisterCashDepositCommand}"  />
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout>
+                            <VerticalStackLayout>
+                                <Image Source="register_cash.png" VerticalOptions="Fill" HorizontalOptions="Fill" Margin="{OnIdiom Default=10, Tablet=60}" />
+                                <Label Text="Registro depositos en Banco" Style="{StaticResource Headline}" FontAttributes="Bold"  />
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Style="{StaticResource BorderRegistre}" Grid.Row="1" Grid.Column="0" Margin="{OnIdiom Default=10, Tablet=30}" >
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SyncCommand}"  />
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout>
+                            <VerticalStackLayout>
+                                <Image Source="sync.png" VerticalOptions="Fill" HorizontalOptions="Fill" Margin="{OnIdiom Default=10, Tablet=60}" />
+                                <Label Text="Sincronizacion" Style="{StaticResource Headline}" FontAttributes="Bold"  />
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
+                    <Border Style="{StaticResource BorderRegistre}" Grid.Row="1" Grid.Column="1" Margin="{OnIdiom Default=10, Tablet=30}" >
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding LogoutCommand}"  />
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout>
+                            <VerticalStackLayout>
+                                <Image Source="logout.png" VerticalOptions="Fill" HorizontalOptions="Fill" Margin="{OnIdiom Default=10, Tablet=60}" />
+                                <Label Text="Salir" Style="{StaticResource Headline}" FontAttributes="Bold"  />
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>
                 </Grid>
             </Border>
+            
         </ScrollView>
-    </VerticalStackLayout>
+    </Grid>
 </ContentPage>
