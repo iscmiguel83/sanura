@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36202.13 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanura.Core", "Sanura.Core\Sanura.Core.csproj", "{9329E7E4-CF08-4D88-9F50-91123EEC3435}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Sanura.Database", "Sanura.Database\Sanura.Database.sqlproj", "{27150CDE-11E1-4304-AFFC-43C8BD232DEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanura.Infrastructure", "Sanura.Infrastructure\Sanura.Infrastructure.csproj", "{C215B45B-5D85-4F1B-937C-07713A400140}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sanura.Server", "Sanura.Server\Sanura.Server.csproj", "{F2F04567-E649-4371-B349-519B78C72D14}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9329E7E4-CF08-4D88-9F50-91123EEC3435}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9329E7E4-CF08-4D88-9F50-91123EEC3435}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9329E7E4-CF08-4D88-9F50-91123EEC3435}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9329E7E4-CF08-4D88-9F50-91123EEC3435}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27150CDE-11E1-4304-AFFC-43C8BD232DEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27150CDE-11E1-4304-AFFC-43C8BD232DEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27150CDE-11E1-4304-AFFC-43C8BD232DEB}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{27150CDE-11E1-4304-AFFC-43C8BD232DEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27150CDE-11E1-4304-AFFC-43C8BD232DEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27150CDE-11E1-4304-AFFC-43C8BD232DEB}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C215B45B-5D85-4F1B-937C-07713A400140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C215B45B-5D85-4F1B-937C-07713A400140}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C215B45B-5D85-4F1B-937C-07713A400140}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C215B45B-5D85-4F1B-937C-07713A400140}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2F04567-E649-4371-B349-519B78C72D14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2F04567-E649-4371-B349-519B78C72D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2F04567-E649-4371-B349-519B78C72D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2F04567-E649-4371-B349-519B78C72D14}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {53E921E8-C1FD-4B9B-8EC5-1E42D478325B}
+	EndGlobalSection
+EndGlobal

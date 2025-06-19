@@ -1,0 +1,6 @@
+@Sanura.Server.Server_HostAddress = http://localhost:5110
+
+GET {{Sanura.Server.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
