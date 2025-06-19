@@ -1,11 +1,12 @@
-﻿using System.Data;
+﻿using FirebirdSql.Data.FirebirdClient;
 using FluentValidation.AspNetCore;
-using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Sanura.Core.Interfaces;
 using Sanura.Core.Interfaces.Services;
 using Sanura.Core.Services;
+using System.Data;
+using System.Data.Common;
 
 namespace Sanura.Infrastructure.Extension
 {
@@ -13,7 +14,7 @@ namespace Sanura.Infrastructure.Extension
     {
         public static IServiceCollection AddDbContext(this IServiceCollection services, IConfiguration Configuration)
         {
-            services.AddTransient<IDbConnection>(z => new SqlConnection(Configuration.GetConnectionString("SanuraDB")));
+            services.AddTransient<IDbConnection>(z =>  new FbConnection(Configuration.GetConnectionString("SanuraFB")));
             services.AddTransient<IDbContext, DbContext>();
 
             return services;
