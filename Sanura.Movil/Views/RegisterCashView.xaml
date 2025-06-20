@@ -8,6 +8,9 @@
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IconOverride="{AppThemeBinding Light=back_light.png, Dark=back_dark.png}" />
     </Shell.BackButtonBehavior>                
-    <Grid>
+    <Grid RowDefinitions="auto, 0.45*">
+        <Label Text="Registro despositos en banco" Style="{StaticResource HeadPage}" Grid.Row="0" />
+        <ScrollView Grid.Row="1">
+        </ScrollView>
     </Grid>
 </ContentPage>

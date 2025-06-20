@@ -13,8 +13,8 @@
     <ContentPage.Behaviors>
         <toolkit:EventToCommandBehavior EventName="Appearing" Command="{Binding LoadDataCommand}" />
     </ContentPage.Behaviors>
-    <Grid RowDefinitions="0.10*, 0.90*">
-        <Label Text="Clientes" Style="{StaticResource HeadPage}" Grid.Row="0"/>
+    <Grid RowDefinitions="auto, 0.90*">
+        <Label Text="Clientes" Style="{StaticResource HeadPage}" Grid.Row="0" />
         <Border  Grid.Row="1" Style="{StaticResource BorderPage}" >
             <ScrollView Grid.Row="0">
                 <CollectionView ItemsSource="{Binding Customers}" >

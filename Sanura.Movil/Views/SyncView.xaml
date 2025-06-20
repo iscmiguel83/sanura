@@ -8,8 +8,9 @@
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IconOverride="{AppThemeBinding Light=back_light.png, Dark=back_dark.png}" />
     </Shell.BackButtonBehavior>
-    <Grid>
-        <ScrollView >
+    <Grid RowDefinitions="auto, 0.45*">
+        <Label Text="Sincronización" Style="{StaticResource HeadPage}" Grid.Row="0" />
+        <ScrollView Grid.Row="1">
             <Border Style="{StaticResource BorderPage}">
                 <Grid ColumnDefinitions="0.5*,0.5*" RowDefinitions="0.5*,0.5*"> 
                     <Border Style="{StaticResource BorderRegistre}" Grid.Row="0" Grid.Column="0" Margin="{OnIdiom Default=10, Tablet=30}" >
