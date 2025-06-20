@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:Sanura.Movil.ViewModels"
+             xmlns:m="clr-namespace:Sanura.Core.Entities;assembly=Sanura.Core"
+             x:Class="Sanura.Movil.Views.BillingView"
+             x:DataType="vm:BillingViewModel"
+             Title="BillingView">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IconOverride="{AppThemeBinding Light=back_light.png, Dark=back_dark.png}" />
+    </Shell.BackButtonBehavior>    
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Appearing" Command="{Binding LoadDataCommand}" />
+    </ContentPage.Behaviors>
+    <Grid RowDefinitions="0.10*, 0.90*">
+        <Label Text="Clientes" Style="{StaticResource HeadPage}" Grid.Row="0"/>
+        <Border  Grid.Row="1" Style="{StaticResource BorderPage}" >
+            <ScrollView Grid.Row="0">
+                <CollectionView ItemsSource="{Binding Customers}" >
+                     <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical"  />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="m:Customer">
+                            <Border Style="{StaticResource BorderRegister}" Margin="10,5">
+                                <Border.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.ShowCustomerCommand}" CommandParameter="{Binding}" />
+                                </Border.GestureRecognizers>                                        
+                                <Grid ColumnDefinitions="80,auto,0.20*" RowDefinitions="auto,auto,auto,auto" Margin="10">
+                                    <Image Source="empty.png"  HorizontalOptions="End" Grid.Row="0" Grid.Column="0" Grid.RowSpan="3" 
+                                           MaximumHeightRequest="80" >
+                                        <Image.Triggers>
+                                            <DataTrigger TargetType="Image" Binding="{Binding Status}" Value="S">
+                                                <Setter Property="Source" Value="suspend.png"/>
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="Image" Binding="{Binding Status}" Value="A">
+                                                <Setter Property="Source" Value="active.png"/>
+                                            </DataTrigger>
+                                        </Image.Triggers>
+                                    </Image>
+
+                                    <Label Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" FontAttributes="Bold">
+                                        <Label.Triggers>
+                                            <DataTrigger TargetType="Label" Binding="{Binding Status}" Value="S">
+                                                <Setter Property="Text" Value="Suspendido"/>
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="Label" Binding="{Binding Status}" Value="A">
+                                                <Setter Property="Text" Value="Activo"/>
+                                            </DataTrigger>
+                                        </Label.Triggers>
+                                    </Label>
+
+                                    <Label Text="{Binding Rfc}" Grid.Row="0" Grid.Column="1" FontAttributes="Bold" />
+                                    <Label Text="{Binding Nombre}" Grid.Row="1" Grid.Column="1"  />
+                                    <Label Text="{Binding NombreComercial}" Grid.Row="2" Grid.Column="1" />
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate> 
+                </CollectionView>
+            </ScrollView>
+        </Border>
+    </Grid>
+</ContentPage>

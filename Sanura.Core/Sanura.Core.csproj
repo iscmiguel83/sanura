@@ -10,7 +10,6 @@
     <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="Dapper" Version="2.1.44" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <FrameworkReference Include="Microsoft.AspNetCore.App" />   
   </ItemGroup>
 
 </Project>

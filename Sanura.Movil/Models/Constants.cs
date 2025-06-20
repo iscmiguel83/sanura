@@ -1,0 +1,14 @@
+using System;
+
+namespace Sanura.Movil.Models;
+
+public class Constants
+{
+    public const string FileName = "seller.json";
+
+
+    public const string Billing = "billing";
+    public const string BillingCustomer = "billing/customer";
+    public const string RegisterCash = "registercash";
+    public const string Sync = "sync";
+}

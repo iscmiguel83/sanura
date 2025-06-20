@@ -1,5 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using Sanura.Movil.Clients;
+using Sanura.Movil.Interfaces.Clients;
 using Sanura.Movil.Interfaces.ViewModels;
 using Sanura.Movil.ViewModels;
 using Sanura.Movil.Views;
@@ -33,6 +35,7 @@ public static class MauiProgram
 
 	public static MauiAppBuilder RegisterClients(this MauiAppBuilder builder)
 	{
+		builder.Services.AddSingleton<IClientSyncService, ClientSyncService>();
 		return builder;
 	}
 
@@ -43,14 +46,24 @@ public static class MauiProgram
 
 	public static MauiAppBuilder RegisterViews(this MauiAppBuilder builder)
 	{
+		builder.Services.AddSingleton<BillingView>();
 		builder.Services.AddSingleton<HomeView>();
+		builder.Services.AddSingleton<RegisterCashView>();
+		builder.Services.AddSingleton<SyncView>();
+
+		builder.Services.AddTransient<BillingCustomerView>();
 
 		return builder;
 	}
 
 	public static MauiAppBuilder RegisterViewModels(this MauiAppBuilder builder)
 	{
+		builder.Services.AddSingleton<IBillingViewModel, BillingViewModel>();
 		builder.Services.AddSingleton<IHomeViewModel, HomeViewModel>();
+		builder.Services.AddSingleton<IRegisterCashViewModel, RegisterCashViewModel>();
+		builder.Services.AddSingleton<ISyncViewModel, SyncViewModel>();
+
+		builder.Services.AddTransient<IBillingCustomerViewModel, BillingCustomerViewModel>();
 
         return builder;
 	}
