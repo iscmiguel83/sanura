@@ -13,22 +13,18 @@
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding BillingCommand}"  />
                         </Border.GestureRecognizers>
-                        <VerticalStackLayout>
-                            <VerticalStackLayout>
-                                <Image Source="billing.png" Style="{StaticResource ResponsiveLandscapeImageStyle}" />
-                                <Label Text="Cobranza" Style="{StaticResource TextMenu}" FontAttributes="Bold"  />
-                            </VerticalStackLayout>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Image Source="billing.png" Style="{StaticResource ResponsiveLandscapeImageStyle}" />
+                            <Label Text="Cobranza" Style="{StaticResource TextMenu}" FontAttributes="Bold"  />
                         </VerticalStackLayout>
                     </Border>
                     <Border Style="{StaticResource BorderRegistre}" Grid.Row="0" Grid.Column="1" Margin="{OnIdiom Default=10, Tablet=30}" >
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding RegisterCashDepositCommand}"  />
                         </Border.GestureRecognizers>
-                        <VerticalStackLayout>
-                            <VerticalStackLayout>
-                                <Image Source="register_cash.png" Style="{StaticResource ResponsiveLandscapeImageStyle}" />
-                                <Label Text="Registro depositos en Banco" Style="{StaticResource TextMenu}"   />
-                            </VerticalStackLayout>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Image Source="register_cash.png" Style="{StaticResource ResponsiveLandscapeImageStyle}"  />
+                            <Label Text="Registro depositos en Banco" Style="{StaticResource TextMenu}"   />
                         </VerticalStackLayout>
                     </Border>
 
@@ -36,41 +32,35 @@
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding SyncCommand}"  />
                         </Border.GestureRecognizers>
-                        <VerticalStackLayout>
-                            <VerticalStackLayout>
-                                <Image Source="sync.png" Style="{StaticResource ResponsiveLandscapeImageStyle}" />
-                                <Label Text="Sincronizacion" Style="{StaticResource TextMenu}" FontAttributes="Bold"  />
-                            </VerticalStackLayout>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Image Source="sync.png" Style="{StaticResource ResponsiveLandscapeImageStyle}" />
+                            <Label Text="Sincronizacion" Style="{StaticResource TextMenu}" FontAttributes="Bold"  />
                         </VerticalStackLayout>
                     </Border>
                     <!--!<Border Style="{StaticResource BorderRegistre}" Grid.Row="1" Grid.Column="1" Margin="{OnIdiom Default=10, Tablet=30}" >
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding LogoutCommand}"  />
                         </Border.GestureRecognizers>
-                        <VerticalStackLayout>
-                            <VerticalStackLayout>
-                                <Image VerticalOptions="Fill" HorizontalOptions="Fill" Margin="{OnIdiom Default=10, Tablet=60}" >
+                        <VerticalStackLayout VerticalOptions="Center">
+                                <ImageMargin="{OnIdiom Default=10, Tablet=60}" >
                                     <Image.Source>
                                         <AppThemeBinding Light="logout_light.png" Dark="logout_dark.png"/>
                                     </Image.Source>
                                 </Image>
                                 <Label Text="Salir" Style="{StaticResource TextMenu}" FontAttributes="Bold"  />
-                            </VerticalStackLayout>
                         </VerticalStackLayout>
                     </Border>-->
                     <Border Style="{StaticResource BorderRegistre}" Grid.Row="1" Grid.Column="1" Margin="{OnIdiom Default=10, Tablet=30}" >
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding SettingsCommand}"  />
                         </Border.GestureRecognizers>
-                        <VerticalStackLayout>
-                            <VerticalStackLayout>
-                                <Image Style="{StaticResource ResponsiveLandscapeImageStyle}" >
-                                    <Image.Source>
-                                        <AppThemeBinding Light="settings_light.png" Dark="settings_dark.png"/>
-                                    </Image.Source>
-                                </Image>
-                                <Label Text="Configuración" Style="{StaticResource TextMenu}" FontAttributes="Bold"  />
-                            </VerticalStackLayout>
+                        <VerticalStackLayout VerticalOptions="Center">
+                            <Image Style="{StaticResource ResponsiveLandscapeImageStyle}" >
+                                <Image.Source>
+                                    <AppThemeBinding Light="settings_light.png" Dark="settings_dark.png"/>
+                                </Image.Source>
+                            </Image>
+                            <Label Text="Configuración" Style="{StaticResource TextMenu}" FontAttributes="Bold"  />
                         </VerticalStackLayout>
                     </Border>
                 </Grid>

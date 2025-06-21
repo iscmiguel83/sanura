@@ -16,8 +16,8 @@
     <Grid RowDefinitions="auto, auto, 0.90*">
         <Label Text="Clientes" Style="{StaticResource HeadPage}" Grid.Row="0" />
         <Grid ColumnDefinitions="0.5*,0.5*" Grid.Row="1">
-            <Label Grid.Column="0" Text="Buscar: " HorizontalOptions="End" />
-            <Entry Grid.Column="1" Text="{Binding Filter}"  HorizontalOptions="Start"/>
+            <Label Grid.Column="0" Text="Buscar: " VerticalOptions="Center" HorizontalOptions="End" FontSize="14"/>
+            <Entry Grid.Column="1" Text="{Binding Filter}" VerticalOptions="Center"  HorizontalOptions="Start" Placeholder="Introduce cualquier patron a buscar" />
         </Grid>
         <Border  Grid.Row="2" Style="{StaticResource BorderPage}" >
             <ScrollView Grid.Row="0">
