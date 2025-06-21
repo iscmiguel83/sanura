@@ -19,7 +19,11 @@
                         </Border.GestureRecognizers>
                         <VerticalStackLayout>
                             <VerticalStackLayout>
-                                <Image Source="download.png" VerticalOptions="Fill" HorizontalOptions="Fill" Margin="{OnIdiom Default=10, Tablet=60}" />
+                                <Image VerticalOptions="Fill" HorizontalOptions="Fill" Margin="{OnIdiom Default=10, Tablet=60}">
+                                    <Image.Source>
+                                        <AppThemeBinding Light="download_light.png" Dark="download_dark.png"/>
+                                    </Image.Source>
+                                </Image>
                                 <Label Text="Descargar" Style="{StaticResource Headline}" FontAttributes="Bold"  />
                             </VerticalStackLayout>
                         </VerticalStackLayout>
@@ -30,7 +34,11 @@
                         </Border.GestureRecognizers>
                         <VerticalStackLayout>
                             <VerticalStackLayout>
-                                <Image Source="upload.png" VerticalOptions="Fill" HorizontalOptions="Fill" Margin="{OnIdiom Default=10, Tablet=60}" />
+                                <Image VerticalOptions="Fill" HorizontalOptions="Fill" Margin="{OnIdiom Default=10, Tablet=60}" >
+                                    <Image.Source>
+                                        <AppThemeBinding Light="upload_light.png" Dark="upload_dark.png"/>
+                                    </Image.Source>
+                                </Image>
                                 <Label Text="Subir" Style="{StaticResource Headline}" FontAttributes="Bold"  />
                             </VerticalStackLayout>
                         </VerticalStackLayout>

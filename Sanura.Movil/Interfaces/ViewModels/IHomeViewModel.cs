@@ -23,4 +23,9 @@ public interface IHomeViewModel
     {
         get;
     }
+
+    IAsyncRelayCommand SettingsCommand
+    {
+        get;
+    }
 }

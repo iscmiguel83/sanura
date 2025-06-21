@@ -16,6 +16,7 @@ public interface IBillingViewModel
     {
         get;
     }
+    
     IAsyncRelayCommand LoadDataCommand
     {
         get;

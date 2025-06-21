@@ -14,6 +14,7 @@ public partial class HomeViewModel : ObservableObject, IHomeViewModel
         Routing.RegisterRoute(Constants.Billing, typeof(BillingView));
         Routing.RegisterRoute(Constants.Sync, typeof(SyncView));
         Routing.RegisterRoute(Constants.RegisterCash, typeof(RegisterCashView));
+        Routing.RegisterRoute(Constants.Settings, typeof(SettingsView));
     }
 
     [RelayCommand]
@@ -39,4 +40,11 @@ public partial class HomeViewModel : ObservableObject, IHomeViewModel
     {
 
     }
+
+    [RelayCommand]
+    private async Task SettingsAsync()
+    {
+        await Shell.Current.GoToAsync(Constants.Settings);
+    }
+
 }

@@ -17,7 +17,7 @@ public partial class SyncViewModel : ObservableObject, ISyncViewModel
         this.filePath = Path.Combine(FileSystem.AppDataDirectory, Constants.FileName);
     }
 
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(CanDownload))]
     private async Task DownloadAsync()
     {
         if (File.Exists(this.filePath))
@@ -28,7 +28,8 @@ public partial class SyncViewModel : ObservableObject, ISyncViewModel
 
         try
         {
-            var seller = await this.clientSyncService.DownloadAsync("1");
+            var idSeller = Preferences.Get(Constants.IdSeller, string.Empty);
+            var seller = await this.clientSyncService.DownloadAsync(idSeller);
             await File.WriteAllTextAsync(this.filePath, seller);
             await Notifier.ShowAsync("Aviso", "Sincronizacion finalizada");
         }
@@ -36,16 +37,30 @@ public partial class SyncViewModel : ObservableObject, ISyncViewModel
         {
             await Notifier.ShowAsync("Error", ex.Message);
         }
-        
+
     }
 
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(CanUpload))]
     private async Task UploadAsync()
+    {
+        File.Delete(this.filePath);
+        return;
+    }
+
+    private bool CanDownload()
+    {
+        var idSeller = Preferences.Get(Constants.IdSeller, string.Empty);
+
+        return !string.IsNullOrWhiteSpace(idSeller);
+    }
+
+    private bool CanUpload()
     {
         if (File.Exists(this.filePath))
         {
-            File.Delete(this.filePath);
-            return;
+            return true;
         }
+
+        return false;
     }
 }

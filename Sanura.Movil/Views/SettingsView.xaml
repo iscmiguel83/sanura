@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:Sanura.Movil.ViewModels"
+             x:Class="Sanura.Movil.Views.SettingsView"
+             x:DataType="vm:SettingsViewModel"
+             Title="SettingsView">
+    <ContentPage.Behaviors>
+        <toolkit:EventToCommandBehavior EventName="Appearing" Command="{Binding LoadDataCommand}" />
+    </ContentPage.Behaviors>             
+    <Grid RowDefinitions="auto, 0.90*">
+        <Label Text="Configuración" Style="{StaticResource HeadPage}" Grid.Row="0" />
+        <Grid Grid.Row="1" Margin="120,30" RowDefinitions="35, 35" ColumnDefinitions="70, *" >
+            <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Source="seller.png"  HorizontalOptions="End" MaximumHeightRequest="70" />
+            <Entry Grid.Row="0" Grid.Column="1" Text="{Binding IdSeller}" Placeholder="Ingresa el id del vendedor" HorizontalOptions="Center" HorizontalTextAlignment="Center" Keyboard="Numeric" FontSize="22" />
+            <Label Grid.Row="1" Grid.Column="1" Text="Id del vendedor" HorizontalOptions="Center" FontSize="22" />
+        </Grid>
+    </Grid>
+</ContentPage>

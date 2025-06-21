@@ -30,17 +30,18 @@ public partial class BillingViewModel : ObservableObject, IBillingViewModel
     [RelayCommand]
     private async Task LoadDataAsync()
     {
+        this.customers.Clear();
         if (File.Exists(this.filePath))
         {
             var json = await File.ReadAllTextAsync(this.filePath);
             var seller = JsonConvert.DeserializeObject<Seller>(json);
-            if (seller!= null && seller is Seller)
+            if (seller != null && seller is Seller)
             {
                 foreach (var customer in seller.Customers)
                 {
                     this.Customers.Add(customer);
-                }                
-            }            
+                }
+            }
         }       
     }
 

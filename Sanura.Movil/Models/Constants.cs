@@ -11,4 +11,8 @@ public class Constants
     public const string BillingCustomer = "billing/customer";
     public const string RegisterCash = "registercash";
     public const string Sync = "sync";
+    public const string Settings = "settings";
+
+
+    public const string IdSeller = "idSeller";
 }

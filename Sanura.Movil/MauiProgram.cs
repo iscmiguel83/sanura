@@ -52,6 +52,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<SyncView>();
 
 		builder.Services.AddTransient<BillingCustomerView>();
+		builder.Services.AddTransient<SettingsView>();
 
 		return builder;
 	}
@@ -64,6 +65,7 @@ public static class MauiProgram
 		builder.Services.AddSingleton<ISyncViewModel, SyncViewModel>();
 
 		builder.Services.AddTransient<IBillingCustomerViewModel, BillingCustomerViewModel>();
+		builder.Services.AddTransient<ISettingsViewModel, SettingsViewModel>();
 
         return builder;
 	}

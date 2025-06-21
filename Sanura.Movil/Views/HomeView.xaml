@@ -4,7 +4,7 @@
              xmlns:vm="clr-namespace:Sanura.Movil.ViewModels"
              x:Class="Sanura.Movil.Views.HomeView"
              x:DataType="vm:HomeViewModel"
-             Title="HomeView">
+             Title="HomeView">    
     <Grid>
         <ScrollView >
             <Border Style="{StaticResource BorderPage}">
@@ -43,14 +43,33 @@
                             </VerticalStackLayout>
                         </VerticalStackLayout>
                     </Border>
-                    <Border Style="{StaticResource BorderRegistre}" Grid.Row="1" Grid.Column="1" Margin="{OnIdiom Default=10, Tablet=30}" >
+                    <!--!<Border Style="{StaticResource BorderRegistre}" Grid.Row="1" Grid.Column="1" Margin="{OnIdiom Default=10, Tablet=30}" >
                         <Border.GestureRecognizers>
                             <TapGestureRecognizer Command="{Binding LogoutCommand}"  />
                         </Border.GestureRecognizers>
                         <VerticalStackLayout>
                             <VerticalStackLayout>
-                                <Image Source="logout.png" VerticalOptions="Fill" HorizontalOptions="Fill" Margin="{OnIdiom Default=10, Tablet=60}" />
+                                <Image VerticalOptions="Fill" HorizontalOptions="Fill" Margin="{OnIdiom Default=10, Tablet=60}" >
+                                    <Image.Source>
+                                        <AppThemeBinding Light="logout_light.png" Dark="logout_dark.png"/>
+                                    </Image.Source>
+                                </Image>
                                 <Label Text="Salir" Style="{StaticResource Headline}" FontAttributes="Bold"  />
+                            </VerticalStackLayout>
+                        </VerticalStackLayout>
+                    </Border>-->
+                    <Border Style="{StaticResource BorderRegistre}" Grid.Row="1" Grid.Column="1" Margin="{OnIdiom Default=10, Tablet=30}" >
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding SettingsCommand}"  />
+                        </Border.GestureRecognizers>
+                        <VerticalStackLayout>
+                            <VerticalStackLayout>
+                                <Image VerticalOptions="Fill" HorizontalOptions="Fill" Margin="{OnIdiom Default=10, Tablet=60}" >
+                                    <Image.Source>
+                                        <AppThemeBinding Light="settings_light.png" Dark="settings_dark.png"/>
+                                    </Image.Source>
+                                </Image>
+                                <Label Text="Configuración" Style="{StaticResource Headline}" FontAttributes="Bold"  />
                             </VerticalStackLayout>
                         </VerticalStackLayout>
                     </Border>
