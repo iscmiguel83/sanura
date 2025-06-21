@@ -204,12 +204,70 @@
         <Setter Property="HorizontalTextAlignment" Value="Center" />
     </Style>
 
+    <Style TargetType="Label" x:Key="TextMenu">
+        <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource MidnightBlue}, Dark={StaticResource White}}" />
+        <Setter Property="FontAttributes" Value="Bold" />
+        <Setter Property="FontSize">
+            <OnIdiom x:TypeArguments="x:Double">
+                <OnIdiom.Phone>24</OnIdiom.Phone>
+                <OnIdiom.Tablet>32</OnIdiom.Tablet>
+            </OnIdiom>
+        </Setter>
+        <Setter Property="HorizontalOptions" Value="Center" />
+        <Setter Property="HorizontalTextAlignment" Value="Center" />
+    </Style>
+
+    <!-- styles.xaml -->
+    <Style x:Key="ResponsiveOrientationImageStyle" TargetType="Image">
+        <!-- <Setter Property="Margin">
+            <OnIdiom x:TypeArguments="x:Double">
+                <OnIdiom.Default>10</OnIdiom.Default>
+                <OnIdiom.Tablet>69</OnIdiom.Tablet>
+            </OnIdiom>
+        </Setter> -->
+        <!-- Tamaño y apariencia por omisión -->
+        <Setter Property="Aspect" Value="AspectFit" />
+
+        <!-- Estados visuales según orientación  -->
+        <Setter Property="VisualStateManager.VisualStateGroups">
+            <VisualStateGroupList>
+                <VisualStateGroup x:Name="OrientationStates">
+
+                    <!-- Estado PORTRAIT (sin tamaño fijo) -->
+                    <VisualState x:Name="Portrait">
+                        <VisualState.StateTriggers>
+                            <!-- ⬅️  Activa cuando el dispositivo está en vertical -->
+                            <OrientationStateTrigger Orientation="Portrait" />
+                        </VisualState.StateTriggers>
+                        <!-- Sin setters: usa el tamaño natural o el que marque el layout -->
+                    </VisualState>
+
+                    <!-- Estado LANDSCAPE (forzamos tamaño) -->
+                    <VisualState x:Name="Landscape">
+                        <VisualState.StateTriggers>
+                            <!-- ⬅️  Activa cuando el dispositivo está en horizontal -->
+                            <OrientationStateTrigger Orientation="Landscape" />
+                        </VisualState.StateTriggers>
+
+                        <!-- Setters que solo se aplican en landscape -->
+                        <VisualState.Setters>
+                            <Setter Property="WidthRequest"  Value="120" />
+                            <Setter Property="HeightRequest" Value="120" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                </VisualStateGroup>
+            </VisualStateGroupList>
+        </Setter>
+    </Style>
+
     <Style TargetType="Label" x:Key="SubHeadline">
         <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource MidnightBlue}, Dark={StaticResource White}}" />
         <Setter Property="FontSize" Value="24" />
         <Setter Property="HorizontalOptions" Value="Center" />
         <Setter Property="HorizontalTextAlignment" Value="Center" />
     </Style>
+    
 
     <Style TargetType="ListView">
         <Setter Property="SeparatorColor" Value="{AppThemeBinding Light={StaticResource Gray200}, Dark={StaticResource Gray500}}" />

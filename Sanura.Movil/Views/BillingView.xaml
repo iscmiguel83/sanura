@@ -13,9 +13,13 @@
     <ContentPage.Behaviors>
         <toolkit:EventToCommandBehavior EventName="Appearing" Command="{Binding LoadDataCommand}" />
     </ContentPage.Behaviors>
-    <Grid RowDefinitions="auto, 0.90*">
+    <Grid RowDefinitions="auto, auto, 0.90*">
         <Label Text="Clientes" Style="{StaticResource HeadPage}" Grid.Row="0" />
-        <Border  Grid.Row="1" Style="{StaticResource BorderPage}" >
+        <Grid ColumnDefinitions="0.5*,0.5*" Grid.Row="1">
+            <Label Grid.Column="0" Text="Buscar: " HorizontalOptions="End" />
+            <Entry Grid.Column="1" Text="{Binding Filter}"  HorizontalOptions="Start"/>
+        </Grid>
+        <Border  Grid.Row="2" Style="{StaticResource BorderPage}" >
             <ScrollView Grid.Row="0">
                 <CollectionView ItemsSource="{Binding Customers}" >
                      <CollectionView.ItemsLayout>

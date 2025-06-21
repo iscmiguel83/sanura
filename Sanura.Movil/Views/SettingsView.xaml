@@ -11,7 +11,18 @@
     </ContentPage.Behaviors>             
     <Grid RowDefinitions="auto, 0.90*">
         <Label Text="Configuración" Style="{StaticResource HeadPage}" Grid.Row="0" />
-        <Grid Grid.Row="1" Margin="120,30" RowDefinitions="35, 35" ColumnDefinitions="70, *" >
+        <Grid Grid.Row="1" RowDefinitions="35, 35" ColumnDefinitions="70, *" >
+            <Grid.Margin>
+                <OnIdiom x:TypeArguments="Thickness">
+                    <OnIdiom.Phone>
+                        <Thickness>20,30</Thickness>
+                    </OnIdiom.Phone>
+                    <OnIdiom.Tablet>
+                        <Thickness>120,30</Thickness>
+                    </OnIdiom.Tablet>
+                </OnIdiom>
+            </Grid.Margin>
+
             <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Source="seller.png"  HorizontalOptions="End" MaximumHeightRequest="70" />
             <Entry Grid.Row="0" Grid.Column="1" Text="{Binding IdSeller}" Placeholder="Ingresa el id del vendedor" HorizontalOptions="Center" HorizontalTextAlignment="Center" Keyboard="Numeric" FontSize="22" />
             <Label Grid.Row="1" Grid.Column="1" Text="Id del vendedor" HorizontalOptions="Center" FontSize="22" />

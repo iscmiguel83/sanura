@@ -42,7 +42,7 @@ public partial class BillingViewModel : ObservableObject, IBillingViewModel
                     this.Customers.Add(customer);
                 }
             }
-        }       
+        }
     }
 
     [RelayCommand]
@@ -52,6 +52,12 @@ public partial class BillingViewModel : ObservableObject, IBillingViewModel
             {
                 { "Customer", customer}
             };
-            await Shell.Current.GoToAsync(Constants.BillingCustomer, parameters);
+        await Shell.Current.GoToAsync(Constants.BillingCustomer, parameters);
     }
+
+    partial void OnFilterChanged(string value)
+    {
+        
+    }
+
 }

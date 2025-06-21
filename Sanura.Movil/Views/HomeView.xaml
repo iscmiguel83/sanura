@@ -15,8 +15,8 @@
                         </Border.GestureRecognizers>
                         <VerticalStackLayout>
                             <VerticalStackLayout>
-                                <Image Source="billing.png" VerticalOptions="Fill" HorizontalOptions="Fill" Margin="{OnIdiom Default=10, Tablet=60}" />
-                                <Label Text="Cobranza" Style="{StaticResource Headline}" FontAttributes="Bold"  />
+                                <Image Source="billing.png" Style="{StaticResource ResponsiveLandscapeImageStyle}" />
+                                <Label Text="Cobranza" Style="{StaticResource TextMenu}" FontAttributes="Bold"  />
                             </VerticalStackLayout>
                         </VerticalStackLayout>
                     </Border>
@@ -26,8 +26,8 @@
                         </Border.GestureRecognizers>
                         <VerticalStackLayout>
                             <VerticalStackLayout>
-                                <Image Source="register_cash.png" VerticalOptions="Fill" HorizontalOptions="Fill" Margin="{OnIdiom Default=10, Tablet=60}" />
-                                <Label Text="Registro depositos en Banco" Style="{StaticResource Headline}" FontAttributes="Bold"  />
+                                <Image Source="register_cash.png" Style="{StaticResource ResponsiveLandscapeImageStyle}" />
+                                <Label Text="Registro depositos en Banco" Style="{StaticResource TextMenu}"   />
                             </VerticalStackLayout>
                         </VerticalStackLayout>
                     </Border>
@@ -38,8 +38,8 @@
                         </Border.GestureRecognizers>
                         <VerticalStackLayout>
                             <VerticalStackLayout>
-                                <Image Source="sync.png" VerticalOptions="Fill" HorizontalOptions="Fill" Margin="{OnIdiom Default=10, Tablet=60}" />
-                                <Label Text="Sincronizacion" Style="{StaticResource Headline}" FontAttributes="Bold"  />
+                                <Image Source="sync.png" Style="{StaticResource ResponsiveLandscapeImageStyle}" />
+                                <Label Text="Sincronizacion" Style="{StaticResource TextMenu}" FontAttributes="Bold"  />
                             </VerticalStackLayout>
                         </VerticalStackLayout>
                     </Border>
@@ -54,7 +54,7 @@
                                         <AppThemeBinding Light="logout_light.png" Dark="logout_dark.png"/>
                                     </Image.Source>
                                 </Image>
-                                <Label Text="Salir" Style="{StaticResource Headline}" FontAttributes="Bold"  />
+                                <Label Text="Salir" Style="{StaticResource TextMenu}" FontAttributes="Bold"  />
                             </VerticalStackLayout>
                         </VerticalStackLayout>
                     </Border>-->
@@ -64,12 +64,12 @@
                         </Border.GestureRecognizers>
                         <VerticalStackLayout>
                             <VerticalStackLayout>
-                                <Image VerticalOptions="Fill" HorizontalOptions="Fill" Margin="{OnIdiom Default=10, Tablet=60}" >
+                                <Image Style="{StaticResource ResponsiveLandscapeImageStyle}" >
                                     <Image.Source>
                                         <AppThemeBinding Light="settings_light.png" Dark="settings_dark.png"/>
                                     </Image.Source>
                                 </Image>
-                                <Label Text="Configuración" Style="{StaticResource Headline}" FontAttributes="Bold"  />
+                                <Label Text="Configuración" Style="{StaticResource TextMenu}" FontAttributes="Bold"  />
                             </VerticalStackLayout>
                         </VerticalStackLayout>
                     </Border>
