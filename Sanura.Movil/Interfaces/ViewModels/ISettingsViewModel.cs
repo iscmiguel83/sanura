@@ -10,6 +10,12 @@ public interface ISettingsViewModel
         set;
     }
 
+    string Url
+    {
+        get;
+        set;
+    }
+
     IRelayCommand LoadDataCommand
     {
         get;

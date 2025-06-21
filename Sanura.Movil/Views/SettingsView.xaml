@@ -8,11 +8,11 @@
              Title="SettingsView">
     <ContentPage.Behaviors>
         <toolkit:EventToCommandBehavior EventName="Appearing" Command="{Binding LoadDataCommand}" />
-    </ContentPage.Behaviors>             
-    <Grid RowDefinitions="auto, 0.90*">
-        <Label Text="Configuración" Style="{StaticResource HeadPage}" Grid.Row="0" />
-        <Grid Grid.Row="1" RowDefinitions="35, 35" ColumnDefinitions="70, *" >
-            <Grid.Margin>
+    </ContentPage.Behaviors>          
+    <Grid RowDefinitions="auto, auto, 0.90*">
+        <Label Text="Configuración" Style="{StaticResource HeadPage}" Grid.Row="0" />   
+        <VerticalStackLayout Spacing="20" Grid.Row="1">
+            <VerticalStackLayout.Margin>
                 <OnIdiom x:TypeArguments="Thickness">
                     <OnIdiom.Phone>
                         <Thickness>20,30</Thickness>
@@ -21,11 +21,19 @@
                         <Thickness>120,30</Thickness>
                     </OnIdiom.Tablet>
                 </OnIdiom>
-            </Grid.Margin>
+            </VerticalStackLayout.Margin>
 
-            <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Source="seller.png"  HorizontalOptions="End" MaximumHeightRequest="70" />
-            <Entry Grid.Row="0" Grid.Column="1" Text="{Binding IdSeller}" Placeholder="Ingresa el id del vendedor" HorizontalOptions="Center" HorizontalTextAlignment="Center" Keyboard="Numeric" FontSize="22" />
-            <Label Grid.Row="1" Grid.Column="1" Text="Id del vendedor" HorizontalOptions="Center" FontSize="22" />
-        </Grid>
+            <Grid RowDefinitions="35, 35" ColumnDefinitions="70, *" >
+                <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Source="seller.png"  HorizontalOptions="End" MaximumHeightRequest="70" />
+                <Entry Grid.Row="0" Grid.Column="1" Text="{Binding IdSeller}" Placeholder="Ingresa el id del vendedor" HorizontalOptions="Center" HorizontalTextAlignment="Center" Keyboard="Numeric" FontSize="22" />
+                <Label Grid.Row="1" Grid.Column="1" Text="Id del vendedor" HorizontalOptions="Center" FontSize="22" />
+            </Grid>
+
+            <Grid RowDefinitions="35, 35" ColumnDefinitions="70, *" >
+                <Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Source="url.png"  HorizontalOptions="End" MaximumHeightRequest="70" />
+                <Entry Grid.Row="0" Grid.Column="1" Text="{Binding Url}" Placeholder="Ingresa la url del servidor" HorizontalOptions="Center" HorizontalTextAlignment="Center" Keyboard="Numeric" FontSize="22" />
+                <Label Grid.Row="1" Grid.Column="1" Text="Servidor" HorizontalOptions="Center" FontSize="22" />
+            </Grid>
+        </VerticalStackLayout>
     </Grid>
 </ContentPage>

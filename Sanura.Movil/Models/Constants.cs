@@ -15,4 +15,5 @@ public class Constants
 
 
     public const string IdSeller = "idSeller";
+    public const string Url = "url";
 }
