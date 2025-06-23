@@ -14,7 +14,7 @@ namespace Sanura.Server.Controllers
             this.syncService = syncService;
         }
 
-        [HttpPost, Route("Download")]
+        [HttpGet, Route("Download")]
         [ProducesResponseType((int)HttpStatusCode.OK, Type = typeof(string))]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task<IActionResult> DownloadAsync(string idSeller)
